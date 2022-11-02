@@ -26,30 +26,41 @@
             font-family: 'Noto Serif KR', serif;
         }
 
+        #homebnt {
+            background-color: rgba(255,255,255,0);
+            font-weight: bold;
+            font-size: 25px;
+            color: black;
+
+            border: none;
+            margin-left: 10px;
+        }
+
         .mylayout {
             width: auto;
-            height: 400px;
             background-color: #fde7e7;
-
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
         }
 
         .mylayout > img{
-            margin-left: 100px;
-            width: 300px;
+            width: 250px;
             height: 300px;
             border-radius: 10px;
+            margin-top: 50px;
+            margin-bottom: 10px;
         }
 
 
         .myprofile {
-            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
         }
 
         .myprofile > h1 {
             font-family: 'Jua', sans-serif;
+
         }
 
         .myprofile > button {
@@ -59,6 +70,7 @@
             border: 3px solid white;
             color: white;
             background-color: black;
+            margin: auto;
         }
 
         .myprofile > button:hover {
@@ -69,6 +81,7 @@
             padding-right: 30px;
             padding-bottom: 5px;
             font-family: 'Jua', sans-serif;
+            font-size: 18px;
         }
 
 
@@ -155,14 +168,18 @@
             $('#disppost').show()
         }
 
+        function postclose(){
+            $('#disppost').hide()
+        }
+
     </script>
 </head>
 <body style="background-color: #fde7e7">
-<h3 onclick=location.href='/'>&nbspHOME</h3>
+<button id="homebnt" onclick="location.href='/'">HOME</button>
 <div class="mylayout">
     <img src="../static/seongjun.jpg" alt="사진">
     <div class="myprofile">
-        <h1>장성준</h1>
+        <h1 style="margin: auto">장성준</h1>
         <hr>
         <table>
         <tr>
@@ -187,7 +204,7 @@
         </tr>
         <tr>
             <td>Blog</td>
-            <td><a href="https://ace-jun.tistory.com/" target="_blank">https://ace-jun.tistory.com/</a></td>
+            <td><a href="https://ace-jun.tistory.com/" target="_blank">블로그 보기</a></td>
         </tr>
         </table>
         <hr>
@@ -206,6 +223,7 @@
         <label for="floatingTextarea2">방명록</label>
     </div>
     <button onclick="save_comment()" type="button" class="btn btn-dark">방명록 남기기</button>
+    <button onclick="postclose()" type="button" class="btn btn-dark">방명록 닫기</button>
 </div>
 <div class="mycards" id="comment-list">
 </div>
